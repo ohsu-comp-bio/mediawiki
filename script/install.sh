@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/www/mediawiki
+cd /var/www/mediawiki/w
 
 # Move generic config out of place or installer wont run
 mv ./LocalSettings.php /tmp/LocalSettings.php
@@ -16,6 +16,7 @@ php maintenance/install.php Wiki $1 --pass=$2 \
  --installdbpass=${MEDIAWIKI_DB_PASSWORD} \
  --dbuser=${MEDIAWIKI_DB_USER} \
  --dbpass=${MEDIAWIKI_DB_PASSWORD} \
+ --dbpath=${MEDIAWIKI_DB_PATH} \
  --scriptpath=/
 
 # Fix SQLite data folder permissions
